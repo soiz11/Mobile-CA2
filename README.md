@@ -1,6 +1,6 @@
-# s
+# Mobile communication CA 2 
 
-A new Flutter project.
+A new Flutter project Showcase the UI development skill.
 
 ## Getting Started
 

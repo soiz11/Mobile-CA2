@@ -2,6 +2,8 @@ import 'package:Mobile_CA_2/pages/home.dart';
 import 'package:Mobile_CA_2/pages/testing.dart';
 import 'package:flutter/material.dart';
 
+import 'package:Mobile_CA_2/pages/order.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,6 +14,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const Home();
+    return const Order();
   }
 }

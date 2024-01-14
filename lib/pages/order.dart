@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
 import 'package:Mobile_CA_2/components/custom_btn.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +7,34 @@ import 'package:flutter/material.dart';
 // import 'package:Mobile_CA_2/widgets/check_out_box.dart';
 
 
-class Order extends StatelessWidget {
+class Order extends StatefulWidget {
   const Order({super.key});
+
+  @override
+  State<Order> createState() => _OrderState();
+}
+
+class _OrderState extends State<Order> {
+
+
+    int count = 1;
+
+    void incrementCount() {
+      setState(() {
+        count++;
+      });
+    }
+
+    void decrementCount() {
+      setState(() {
+        if (count <= 0) {
+          count = 0 ;
+        } else {
+          count--;
+        }
+        
+      });
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +47,6 @@ class Order extends StatelessWidget {
     const double subtopicSize = 12;   //font size of sub topic
     const double contentSize = 10;   //font size of content
 
-    int count = 1;
-
-    void incrementCount() {
-      count = count + 1;
-    }
-
-    void decrementCount() {
-      count = count - 1;
-    }
 
 
 
@@ -249,24 +264,29 @@ class Order extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                Container(
-                                  height: 20,
-                                  width: 20,
-                                  alignment: Alignment.center,
-                                  // borderRadius:BorderRadius.circular(5),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(0, 155, 155, 155),
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(color: AppColors.bodyTextGrey, width: 2),
+                                InkWell(
+                                  onTap: () {
+                                    decrementCount();
+                                  },
+                                  child: Container(
+                                    height: 20,
+                                    width: 20,
+                                    alignment: Alignment.center,
+                                    // borderRadius:BorderRadius.circular(5),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(0, 155, 155, 155),
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: AppColors.bodyTextGrey, width: 2),
+                                    ),
+                                    child: const Text(
+                                      '-',
+                                      // textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Bold',
+                                        fontSize: subtopicSize,
+                                        
+                                      ),),
                                   ),
-                                  child: const Text(
-                                    '-',
-                                    // textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Bold',
-                                      fontSize: subtopicSize,
-                                      
-                                    ),),
                                 ),
                                 Container(
                                   height: 20,

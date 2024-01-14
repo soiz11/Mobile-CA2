@@ -271,17 +271,38 @@ class _HomeState extends State<Home> {
               child: GridView(
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
-                children: [
-                  Tile(),
-                  Tile(),
-                  Tile(),
-                  Tile(),
-                ],
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 25,
-                  crossAxisSpacing: 25,
+                  childAspectRatio: 3 / 5,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 20,
                 ),
+                children: [
+                  Tile(
+                    imgUrl: 'lib/assets/images/c_choco.png',
+                    rating: "4.8",
+                    description: "with Chocolate",
+                    price: "\$ 4.53",
+                  ),
+                  Tile(
+                    imgUrl: 'lib/assets/images/c_oat.png',
+                    rating: "4.9",
+                    description: "with Oat Milk",
+                    price: "\$ 3.90",
+                  ),
+                  Tile(
+                    imgUrl: 'lib/assets/images/c_choco2.png',
+                    rating: "4.8",
+                    description: "with Chocolate",
+                    price: "\$ 4.53",
+                  ),
+                  Tile(
+                    imgUrl: 'lib/assets/images/c_oat2.png',
+                    rating: "4.0",
+                    description: "with Oat Milk",
+                    price: "\$ 3.90",
+                  ),
+                ],
               ),
             ),
           ],
@@ -296,7 +317,7 @@ class _HomeState extends State<Home> {
                   _currentIndex = index;
                 });
               },
-              items: [
+              items: const [
                 BottomNavigationBarItem(
                   icon: Icon(
                     Icons.home_rounded,
@@ -330,7 +351,7 @@ class _HomeState extends State<Home> {
                   AppColors.btnBrown, // Color for the selected item
               unselectedItemColor: Colors.grey, // Color for unselected items
               showUnselectedLabels:
-                  true, // Set to false if you want to hide labels for unselected items
+                  false, // Set to false if you want to hide labels for unselected items
             ),
             Positioned(
               bottom: 20,

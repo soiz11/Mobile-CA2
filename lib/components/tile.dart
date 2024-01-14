@@ -1,45 +1,51 @@
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
 import 'package:flutter/material.dart';
 
-class Tile extends StatefulWidget {
-  const Tile({super.key});
+class Tile extends StatelessWidget {
+  final String imgUrl;
+  final String rating;
+  final String description;
+  final String price;
 
-  @override
-  State<Tile> createState() => _TileState();
-}
+  Tile({
+    Key? key,
+    required this.imgUrl,
+    required this.rating,
+    required this.description,
+    required this.price,
+  }) : super(key: key);
 
-class _TileState extends State<Tile> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          height: 180,
+          height: 250,
           decoration: BoxDecoration(
-            color: Colors.red,
+            color: AppColors.pureWhite,
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
         Image.asset(
-          'lib/assets/images/c_choco.png',
+          imgUrl,
           fit: BoxFit.cover,
           width: double.infinity,
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.all(8.0),
           child: Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.star_rounded,
                 color: AppColors.starYellow,
                 size: 20,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(
-                "4.8",
-                style: TextStyle(
+                rating,
+                style: const TextStyle(
                   color: AppColors.pureWhite,
                   fontFamily: "Bold",
                   fontSize: 14,
@@ -49,7 +55,7 @@ class _TileState extends State<Tile> {
           ),
         ),
         const Positioned(
-          top: 100, // Adjust the top position as needed
+          top: 150, // Adjust the top position as needed
           left: 10,
           child: Column(
             children: [
@@ -57,11 +63,58 @@ class _TileState extends State<Tile> {
                 "Cappuccino",
                 style: TextStyle(
                   color: AppColors.textBlack,
-                  fontSize: 16,
+                  fontSize: 18,
                   fontFamily: "Bold",
                 ),
               ),
             ],
+          ),
+        ),
+        Positioned(
+          top: 178, // Adjust the top position as needed
+          left: 12,
+          child: Column(
+            children: [
+              Text(
+                description,
+                style: const TextStyle(
+                  color: AppColors.bodyTextGrey,
+                  fontSize: 14,
+                  fontFamily: "Regular",
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 206, // Adjust the top position as needed
+          left: 12,
+          child: Column(
+            children: [
+              Text(
+                price,
+                style: const TextStyle(
+                  color: AppColors.textBlack,
+                  fontSize: 22,
+                  fontFamily: "Bold",
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 205.0,
+          right: 12,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+                width: 35,
+                height: 35,
+                color: AppColors.btnBrown,
+                child: const Icon(
+                  Icons.add,
+                  color: AppColors.pureWhite,
+                )),
           ),
         ),
       ],

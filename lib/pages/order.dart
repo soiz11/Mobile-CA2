@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
 import 'package:Mobile_CA_2/components/custom_btn.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +7,34 @@ import 'package:flutter/material.dart';
 // import 'package:Mobile_CA_2/widgets/check_out_box.dart';
 
 
-class Order extends StatelessWidget {
+class Order extends StatefulWidget {
   const Order({super.key});
+
+  @override
+  State<Order> createState() => _OrderState();
+}
+
+class _OrderState extends State<Order> {
+
+
+    int count = 1;
+
+    void incrementCount() {
+      setState(() {
+        count++;
+      });
+    }
+
+    void decrementCount() {
+      setState(() {
+        if (count <= 1) {
+          count = 1 ;
+        } else {
+          count--;
+        }
+        
+      });
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +47,6 @@ class Order extends StatelessWidget {
     const double subtopicSize = 12;   //font size of sub topic
     const double contentSize = 10;   //font size of content
 
-    int count = 1;
-
-    void incrementCount() {
-      count = count + 1;
-    }
-
-    void decrementCount() {
-      count = count - 1;
-    }
 
 
 
@@ -163,6 +178,79 @@ class Order extends StatelessWidget {
                               fontSize: contentSize,
                             ),
                           ),
+                          SizedBox(
+                            height: subLinespace,
+                          ),
+                          SizedBox(
+                                width: subLinespace,
+                              ),
+                          
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(2),
+                                width: 90,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                color: const Color.fromARGB(0, 198, 124, 78),
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: AppColors.bodyTextGrey,)
+                                      
+                                      ),
+                                
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      child: Align(
+                                        alignment: Alignment.center,
+                                        child: Icon(Icons.edit_note_outlined, color: AppColors.bodyTextGrey, size: 15, )),
+                                      ),
+                                      Text('Edit Address',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Regular',
+                                        fontSize: contentSize,
+                                        
+                                      ),),
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(
+                                width: mainLinespace,
+                              ),
+
+                              Container(
+                                padding: EdgeInsets.all(2),
+                                width: 80,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                color: const Color.fromARGB(0, 198, 124, 78),
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: AppColors.bodyTextGrey,)
+                                      
+                                      ),
+                                
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      child: Align(
+                                        alignment: Alignment.center,
+                                        child: Icon(Icons.note_add_outlined, color: AppColors.bodyTextGrey, size: 12, )),
+                                      ),
+                                      Text('Add Note',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Regular',
+                                        fontSize: contentSize,
+                                      ),),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                 
@@ -190,9 +278,9 @@ class Order extends StatelessWidget {
                       
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                             Container(
                               height: 50,
@@ -210,63 +298,78 @@ class Order extends StatelessWidget {
                               width: 10,
                             ),
                             
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              // mainAxisAlignment: MainAxisAlignment.end,
-                                  
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(top: 10.0),
-                                      child: Text(
-                                        "Cappucino",
-                                        // textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          fontFamily: "Bold",
-                                          fontSize: subtopicSize,
-                                          // backgroundColor: Colors.yellow,
-                                          
+                            Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                // mainAxisAlignment: MainAxisAlignment.end,
+                                    
+                                    children: [
+                                      
+                                      Padding(
+                                      
+                                        padding: EdgeInsets.only(top: 5.0),
+                                        child: Text(
+                                          "Cappucino",
+                                          // textAlign: TextAlign.right,
+                                          style: TextStyle(
+                                            fontFamily: "Bold",
+                                            fontSize: subtopicSize,
+                                            
+                                            // backgroundColor: Colors.yellow,
+                                            
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Container(
-                                      child: const Text(
-                                        'with Chocolate',
-                                        style: TextStyle(
-                                          fontFamily: "Regular",
-                                          fontSize: contentSize,
-                                          // backgroundColor: Colors.blue,
+                                      Container(
+                                        child: Text(
+                                          'with Chocolate',
+                                          style: TextStyle(
+                                            fontFamily: "Regular",
+                                            fontSize: contentSize,
+                                            // backgroundColor: Colors.blue,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                          ],),
-
-                          Row(
+                                    ],
+                                  ),
+                            ),
+                          ],
+                          
+                          
+                          
+                          
+                          ),
+                      
+                        Row(
                             children:[
                             Container(
                               width: 80,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                Container(
-                                  height: 20,
-                                  width: 20,
-                                  alignment: Alignment.center,
-                                  // borderRadius:BorderRadius.circular(5),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(0, 155, 155, 155),
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(color: AppColors.bodyTextGrey, width: 2),
+                                InkWell(
+                                  onTap: () {
+                                    decrementCount();
+                                  },
+                                  child: Container(
+                                    height: 20,
+                                    width: 20,
+                                    alignment: Alignment.center,
+                                    // borderRadius:BorderRadius.circular(5),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(0, 155, 155, 155),
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: AppColors.bodyTextGrey, width: 2),
+                                    ),
+                                    child: const Text(
+                                      '-',
+                                      // textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Bold',
+                                        fontSize: subtopicSize,
+                                        
+                                      ),),
                                   ),
-                                  child: const Text(
-                                    '-',
-                                    // textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Bold',
-                                      fontSize: subtopicSize,
-                                      
-                                    ),),
                                 ),
                                 Container(
                                   height: 20,
@@ -311,6 +414,8 @@ class Order extends StatelessWidget {
                             ),
                             ],
                           )
+                      
+                          
                         ],
                       ),
                           
@@ -326,6 +431,70 @@ class Order extends StatelessWidget {
                           color: AppColors.bodyTextGrey,
                           
                         )
+                      ),
+
+                      SizedBox(
+                        height: mainLinespace,
+                      ),
+
+                      Container(
+                        height: 55,
+                        padding: EdgeInsets.only(left: 5.0),
+                        decoration: BoxDecoration(
+                            // color: AppColors.btnGrey,
+                            // color: Colors.black.withOpacity(0.10),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      // color: const Color.fromARGB(0, 198, 124, 78),
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(color: AppColors.bodyTextGrey,)
+                                      ),
+                                  child:  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          child: Icon(Icons.percent_rounded, color: AppColors.pureWhite, size: 12, ),
+                                          height: 50,
+                                          width: 30,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(10),
+                                            
+                                            // image: const DecorationImage(
+                                            //   fit:BoxFit.cover,image:AssetImage('lib/assets/images/c_chco.png')
+                                            // ),
+                                            color: AppColors.btnBrown,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Center(
+                                          child: Text(
+                                            "1 Discount is Applied!",
+                                            style: TextStyle(
+                                              
+                                              fontFamily: "Bold",
+                                              fontSize: maintopicSize, color: AppColors.textBlack),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            
+                          ],
+                        ),
                       ),
                 
                 
@@ -469,32 +638,48 @@ class Order extends StatelessWidget {
                         height: mainLinespace*2,
                       ),
 
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 50,
-                          width: screenWidth,
-                          decoration: BoxDecoration(
-                            color: AppColors.btnBrown,
-                            borderRadius: BorderRadius.circular(10),
+                      
+                      
+                      // InkWell(
+                      //   onTap: () {},
+                      //   child: Container(
+                      //     alignment: Alignment.center,
+                      //     height: 50,
+                      //     width: screenWidth,
+                      //     decoration: BoxDecoration(
+                      //       color: AppColors.btnBrown,
+                      //       borderRadius: BorderRadius.circular(10),
                                             
-                                          ),
-                          child: const Text(
-                            'ORDER',
-                            style: TextStyle(
-                              fontFamily: 'Bold',
-                              fontSize: maintopicSize,
-                              color: AppColors.pureWhite
-                            ),
-                          )
-                                        ),
-                      ),       
+                      //                     ),
+                      //     child: const Text(
+                      //       'ORDER',
+                      //       style: TextStyle(
+                      //         fontFamily: 'Bold',
+                      //         fontSize: maintopicSize,
+                      //         color: AppColors.pureWhite
+                      //       ),
+                      //     )
+                      //                   ),
+                      // ),       
                     
                     ],
                   ),
                 ),
-              
+                Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children:[
+                          CustomBtn(
+                            btnText: "ORDER",
+                            widthFactor: 0.8,
+                            heightAmount: 50,
+                            fontSize: maintopicSize,
+                            onTap: () {},
+                          
+                          ),
+                        ],
+                    ),
+
+
               ],
             ),
           ),

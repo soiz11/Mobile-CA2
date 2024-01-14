@@ -8,19 +8,33 @@ import 'package:flutter/material.dart';
 // import 'package:Mobile_CA_2/widgets/cart_tile.dart';
 // import 'package:Mobile_CA_2/widgets/check_out_box.dart';
 
+
 class Order extends StatelessWidget {
   const Order({super.key});
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
     double mainLinespace = 10; //Space between Two main topics
     double subLinespace = 5;  //Space between Two sub topics
 
     const double maintopicSize = 16; //font size of main topic
     const double subtopicSize = 12;   //font size of sub topic
     const double contentSize = 10;   //font size of content
+
+    int count = 1;
+
+    void incrementCount() {
+      count = count + 1;
+    }
+
+    void decrementCount() {
+      count = count - 1;
+    }
+
+
+
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -175,55 +189,130 @@ class Order extends StatelessWidget {
                       
                       
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                              fit:BoxFit.cover,image:AssetImage('lib/assets/images/c_chco.png')
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: const DecorationImage(
+                                  fit:BoxFit.cover,image:AssetImage('lib/assets/images/c_chco.png')
+                                ),
+                                color: AppColors.btnBrown,
+                              ),
                             ),
-                            color: AppColors.btnBrown,
-                          ),
-                        ),
-                        
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          // mainAxisAlignment: MainAxisAlignment.end,
-                              
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(top: 10.0),
-                                  child: Text(
-                                    "Cappucino",
-                                    // textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontFamily: "Bold",
-                                      fontSize: subtopicSize,
-                                      // backgroundColor: Colors.yellow,
-                                      
+                            
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // mainAxisAlignment: MainAxisAlignment.end,
+                                  
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.only(top: 10.0),
+                                      child: Text(
+                                        "Cappucino",
+                                        // textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          fontFamily: "Bold",
+                                          fontSize: subtopicSize,
+                                          // backgroundColor: Colors.yellow,
+                                          
+                                        ),
+                                      ),
                                     ),
+                                    Container(
+                                      child: const Text(
+                                        'with Chocolate',
+                                        style: TextStyle(
+                                          fontFamily: "Regular",
+                                          fontSize: contentSize,
+                                          // backgroundColor: Colors.blue,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                          ],),
+
+                          Row(
+                            children:[
+                            Container(
+                              width: 80,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                Container(
+                                  height: 20,
+                                  width: 20,
+                                  alignment: Alignment.center,
+                                  // borderRadius:BorderRadius.circular(5),
+                                  decoration: BoxDecoration(
+                                    color: const Color.fromARGB(0, 155, 155, 155),
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: AppColors.bodyTextGrey, width: 2),
                                   ),
+                                  child: const Text(
+                                    '-',
+                                    // textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Bold',
+                                      fontSize: subtopicSize,
+                                      
+                                    ),),
                                 ),
                                 Container(
-                                  child: const Text(
-                                    'with Chocolate',
+                                  height: 20,
+                                  width: 20,
+                                  alignment: Alignment.center,
+                                  decoration: const BoxDecoration(
+                                    color: Color.fromARGB(0, 155, 155, 155),
+                                  ),
+                                  child: Text(
+                                    count.toString(),
+                                    // textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontFamily: "Regular",
-                                      fontSize: contentSize,
-                                      // backgroundColor: Colors.blue,
+                                      fontFamily: 'Bold',
+                                      fontSize: subtopicSize,
+                                      
+                                    ),),
+                                ),
+                                InkWell(
+                                  onTap: (){incrementCount();},
+                            
+                                  child: Container(
+                                    height: 20,
+                                    width: 20,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(0, 155, 155, 155),
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: AppColors.bodyTextGrey, width: 2),
                                     ),
+                                    child: const Text(
+                                      '+',
+                                      // textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Bold',
+                                        fontSize: subtopicSize,
+                                        
+                                      ),),
                                   ),
                                 ),
-                              ],
+                              
+                              ],),
                             ),
-                      ],),
+                            ],
+                          )
+                        ],
+                      ),
                           
                           
                       const SizedBox(
@@ -360,29 +449,47 @@ class Order extends StatelessWidget {
                       ),
 
                       
+                      // Stack(
+                      //   children:[ Positioned(
+                      //     bottom: 0,
+                      //     child: Container(
+                      //       alignment: Alignment.center,
+                      //       height: 50,
+                      //       width: screenWidth,
+                      //       decoration: BoxDecoration(
+                      //         color: AppColors.btnBrown,
+                      //         borderRadius: BorderRadius.circular(10),
+                      //       ),
+                      //     ),
+                      //   ),],
+                      // ),
+                
 
                       SizedBox(
                         height: mainLinespace*2,
                       ),
 
-                      Container(
-                        alignment: Alignment.center,
-                        height: 50,
-                        width: screenWidth,
-                        decoration: BoxDecoration(
-                          color: AppColors.btnBrown,
-                          borderRadius: BorderRadius.circular(10),
-                    
-                  ),
-                        child: const Text(
-                          'ORDER',
-                          style: TextStyle(
-                            fontFamily: 'Bold',
-                            fontSize: maintopicSize,
-                            color: AppColors.pureWhite
-                          ),
-                        )
-                ),       
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: screenWidth,
+                          decoration: BoxDecoration(
+                            color: AppColors.btnBrown,
+                            borderRadius: BorderRadius.circular(10),
+                                            
+                                          ),
+                          child: const Text(
+                            'ORDER',
+                            style: TextStyle(
+                              fontFamily: 'Bold',
+                              fontSize: maintopicSize,
+                              color: AppColors.pureWhite
+                            ),
+                          )
+                                        ),
+                      ),       
                     
                     ],
                   ),

@@ -1,5 +1,6 @@
 import 'package:Mobile_CA_2/pages/order.dart';
 import 'package:Mobile_CA_2/pages/home.dart';
+import 'package:Mobile_CA_2/pages/detail_Item.dart';
 import 'package:Mobile_CA_2/pages/testing.dart';
 import 'package:flutter/material.dart';
 

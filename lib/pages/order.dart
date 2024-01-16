@@ -64,10 +64,10 @@ class _OrderState extends State<Order> {
           ),
           ),
           leading: Padding(
-            padding: EdgeInsets.only(left: 5),
+            padding: const EdgeInsets.only(left: 5),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.chevron_left),
+              icon: const Icon(Icons.chevron_left),
             ),
           ),
         ),
@@ -83,7 +83,7 @@ class _OrderState extends State<Order> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   
                   child: Column(
                     
@@ -94,7 +94,7 @@ class _OrderState extends State<Order> {
                 
                       Container(
                         height: 55,
-                        padding: EdgeInsets.only(left: 5.0),
+                        padding: const EdgeInsets.only(left: 5.0),
                         decoration: BoxDecoration(
                             color: AppColors.btnGrey,
                             // color: Colors.black.withOpacity(0.10),
@@ -203,11 +203,11 @@ class _OrderState extends State<Order> {
                                 child: Row(
                                   children: [
                                     Container(
-                                      child: Align(
+                                      child: const Align(
                                         alignment: Alignment.center,
                                         child: Icon(Icons.edit_note_outlined, color: AppColors.bodyTextGrey, size: 15, )),
                                       ),
-                                      Text('Edit Address',
+                                      const Text('Edit Address',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: 'Regular',
@@ -233,13 +233,11 @@ class _OrderState extends State<Order> {
                                       
                                       ),
                                 
-                                child: Row(
+                                child: const Row(
                                   children: [
-                                    Container(
-                                      child: Align(
-                                        alignment: Alignment.center,
-                                        child: Icon(Icons.note_add_outlined, color: AppColors.bodyTextGrey, size: 12, )),
-                                      ),
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Icon(Icons.note_add_outlined, color: AppColors.bodyTextGrey, size: 12, )),
                                       Text('Add Note',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -288,7 +286,7 @@ class _OrderState extends State<Order> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 image: const DecorationImage(
-                                  fit:BoxFit.cover,image:AssetImage('lib/assets/images/c_chco.png')
+                                  fit:BoxFit.cover,image:AssetImage('lib/assets/images/c_choco.png')
                                 ),
                                 color: AppColors.btnBrown,
                               ),
@@ -305,7 +303,7 @@ class _OrderState extends State<Order> {
                                     
                                     children: [
                                       
-                                      Padding(
+                                      const Padding(
                                       
                                         padding: EdgeInsets.only(top: 5.0),
                                         child: Text(
@@ -321,7 +319,7 @@ class _OrderState extends State<Order> {
                                         ),
                                       ),
                                       Container(
-                                        child: Text(
+                                        child: const Text(
                                           'with Chocolate',
                                           style: TextStyle(
                                             fontFamily: "Regular",
@@ -381,7 +379,7 @@ class _OrderState extends State<Order> {
                                   child: Text(
                                     count.toString(),
                                     // textAlign: TextAlign.center,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: 'Bold',
                                       fontSize: subtopicSize,
                                       
@@ -476,7 +474,7 @@ class _OrderState extends State<Order> {
                                           ),
                                         ),
                                       ),
-                                      Expanded(
+                                      const Expanded(
                                         child: Center(
                                           child: Text(
                                             "1 Discount is Applied!",

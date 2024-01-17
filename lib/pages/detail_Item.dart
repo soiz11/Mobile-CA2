@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
-import 'package:blurrycontainer/blurrycontainer.dart';
+import 'package:Mobile_CA_2/components/custom_btn.dart';
 import 'package:flutter/material.dart';
 
 class DeatailItem extends StatefulWidget {
@@ -20,224 +20,254 @@ class _DeatailItemState extends State<DeatailItem> {
         backgroundColor: AppColors.pureWhite,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Stack(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Container(
-                      height: 280,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("lib/assets/images/cappucino.png"),
-                        ),
-                      ),
+                    Icon(
+                      Icons.arrow_back_ios_new,
+                      size: 25,
+                    ),
+                    Text(
+                      "Detail",
+                      style: TextStyle(
+                          color: AppColors.backgroundBlack,
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(
+                      Icons.favorite_border_outlined,
+                      size: 25,
                     ),
                   ],
                 ),
 
-                //Rate
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: BlurryContainer(
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Cappuccino",
-                                style: TextStyle(
-                                    color: AppColors.textBlack,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 18,
-                              ),
-                              Text(
-                                "With Chocolate",
-                                style: TextStyle(
-                                  color: AppColors.bodyTextGrey,
-                                  //fontSize: 16,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: AppColors.starYellow,
-                                    size: 20.0,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "4.8",
-                                    style: TextStyle(
-                                        color: AppColors.textBlack,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    "(230)",
-                                    style: TextStyle(
-                                      color: AppColors.bodyTextGrey,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  height: 42,
-                                  width: 42,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image(
-                                        image: AssetImage(
-                                            "lib/assets/images/icon_a.png"),
-                                        height: 35,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
+                Container(
+                  height: 280,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("lib/assets/images/cappucino.png"),
                     ),
                   ),
                 ),
 
-                //other container
-
-                //description
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Description",
-                        style: TextStyle(
-                            color: AppColors.textBlack,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        "A cappuccino is an approximately 150ml (50z) beverage, with 25ml of espresso coffee and 85ml of fresh milk the fo.....",
-                        style: TextStyle(
-                            color: AppColors.bodyTextGrey, fontSize: 15),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        "Size",
-                        style: TextStyle(
-                            color: AppColors.textBlack,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                    ],
+                // capachino
+                Row(children: const [
+                  Text(
+                    "Cappucino",
+                    style: TextStyle(
+                        color: AppColors.textBlack,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "regular"),
                   ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                ]),
+
+                //with cocholate
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "With Chocolate",
+                      style: TextStyle(
+                          color: AppColors.bodyTextGrey,
+                          fontSize: 14,
+                          fontFamily: "regular"),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset("lib/assets/images/icon_a.png"),
+                        Image.asset("lib/assets/images/bags.png"),
+                      ],
+                    ),
+                  ],
                 ),
 
-                // s l m
-                Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 37,
-                        width: 110,
-                        child: Center(
-                          child: Text(
-                            "S",
-                            style: TextStyle(
-                              color: AppColors.textBlack,
-                              fontSize: 18,
-                            ),
+                //rate
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: AppColors.starYellow,
+                      size: 20.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "4.8",
+                      style: TextStyle(
+                          color: AppColors.textBlack,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "regular"),
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "(230)",
+                      style: TextStyle(
+                          color: AppColors.bodyTextGrey,
+                          fontSize: 16,
+                          fontFamily: "regular"),
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: AppColors.btnGrey,
+                ),
+
+                // Description
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Description",
+                      style: TextStyle(
+                          color: AppColors.textBlack,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "A cappuccino is an approximately 150ml (50z) beverage, with 25ml of espresso coffee and 85ml of fresh milk the fo.....",
+                      style: TextStyle(
+                          color: AppColors.bodyTextGrey, fontSize: 15),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Size",
+                      style: TextStyle(
+                          color: AppColors.textBlack,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                  ],
+                ),
+
+                // SML bottun
+
+                Row(
+                  children: [
+                    Container(
+                      height: 37,
+                      width: 110,
+                      child: Center(
+                        child: Text(
+                          "S",
+                          style: TextStyle(
+                            color: AppColors.textBlack,
+                            fontSize: 18,
                           ),
                         ),
-                        decoration: BoxDecoration(
-                          color: AppColors.btnGrey,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: AppColors.btnGrey),
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.pureWhite,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.bodyTextGrey),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 11,
+                    ),
+                    Container(
+                      height: 37,
+                      width: 110,
+                      child: Center(
+                        child: Text(
+                          "M",
+                          style: TextStyle(
+                            color: AppColors.btnBrown,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
-                      SizedBox(
-                        width: 11,
+                      decoration: BoxDecoration(
+                        color: AppColors.btnColor,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.btnBrown),
                       ),
-                      Container(
-                        height: 37,
-                        width: 110,
-                        child: Center(
-                          child: Text(
-                            "M",
-                            style: TextStyle(
+                    ),
+                    SizedBox(
+                      width: 11,
+                    ),
+                    Container(
+                      height: 37,
+                      width: 110,
+                      child: Center(
+                        child: Text(
+                          "L",
+                          style: TextStyle(
+                            color: AppColors.textBlack,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.pureWhite,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.bodyTextGrey),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
+
+                //prise
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Prise",
+                          style: TextStyle(
+                              color: AppColors.bodyTextGrey,
+                              fontSize: 18,
+                              fontFamily: "regular"),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '\$ 4.53',
+                          style: TextStyle(
                               color: AppColors.btnBrown,
-                              fontSize: 18,
-                            ),
-                          ),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "regular"),
                         ),
-                        decoration: BoxDecoration(
-                          color: AppColors.pureWhite,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: AppColors.btnBrown),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CustomBtn(
+                          btnText: "Buy NOw",
+                          widthFactor: 0.58,
+                          onTap: () {},
                         ),
-                      ),
-                      SizedBox(
-                        width: 11,
-                      ),
-                      Container(
-                        height: 37,
-                        width: 110,
-                        child: Center(
-                          child: Text(
-                            "L",
-                            style: TextStyle(
-                              color: AppColors.textBlack,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.btnGrey,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: AppColors.btnGrey),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 27,
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),

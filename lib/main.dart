@@ -1,4 +1,4 @@
-import 'package:Mobile_CA_2/pages/testing.dart';
+import 'package:Mobile_CA_2/pages/delivery.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const Testing();
+    return  MyApp2();
   }
 }

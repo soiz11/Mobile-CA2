@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
 import 'package:Mobile_CA_2/components/custom_btn.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +18,11 @@ class _DeatailItemState extends State<DeatailItem> {
         backgroundColor: AppColors.pureWhite,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
                       Icons.arrow_back_ios_new,
@@ -45,6 +43,7 @@ class _DeatailItemState extends State<DeatailItem> {
                 ),
 
                 Container(
+                  padding: const EdgeInsets.all(8),
                   height: 280,
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
@@ -55,7 +54,7 @@ class _DeatailItemState extends State<DeatailItem> {
                 ),
 
                 // capachino
-                Row(children: const [
+                const Row(children: [
                   Text(
                     "Cappucino",
                     style: TextStyle(
@@ -73,14 +72,14 @@ class _DeatailItemState extends State<DeatailItem> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "With Chocolate",
                       style: TextStyle(
                           color: AppColors.bodyTextGrey,
                           fontSize: 14,
                           fontFamily: "regular"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
@@ -94,12 +93,12 @@ class _DeatailItemState extends State<DeatailItem> {
                 ),
 
                 //rate
-                Row(
+                const Row(
                   children: [
                     Icon(
                       Icons.star,
                       color: AppColors.starYellow,
-                      size: 20.0,
+                      size: 22.0,
                     ),
                     SizedBox(
                       width: 10,
@@ -124,12 +123,12 @@ class _DeatailItemState extends State<DeatailItem> {
                     ),
                   ],
                 ),
-                Divider(
+                const Divider(
                   color: AppColors.btnGrey,
                 ),
 
                 // Description
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -140,22 +139,25 @@ class _DeatailItemState extends State<DeatailItem> {
                           fontSize: 22),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
                     Text(
                       "A cappuccino is an approximately 150ml (50z) beverage, with 25ml of espresso coffee and 85ml of fresh milk the fo.....",
                       style: TextStyle(
-                          color: AppColors.bodyTextGrey, fontSize: 15),
+                          color: AppColors.bodyTextGrey,
+                          fontSize: 16,
+                          fontFamily: "regular"),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 12,
                     ),
                     Text(
                       "Size",
                       style: TextStyle(
                           color: AppColors.textBlack,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "regular"),
                     ),
                     SizedBox(
                       height: 15,
@@ -168,9 +170,14 @@ class _DeatailItemState extends State<DeatailItem> {
                 Row(
                   children: [
                     Container(
-                      height: 37,
+                      height: 50,
                       width: 110,
-                      child: Center(
+                      decoration: BoxDecoration(
+                        color: AppColors.pureWhite,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.bodyTextGrey),
+                      ),
+                      child: const Center(
                         child: Text(
                           "S",
                           style: TextStyle(
@@ -179,19 +186,19 @@ class _DeatailItemState extends State<DeatailItem> {
                           ),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: AppColors.pureWhite,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: AppColors.bodyTextGrey),
-                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 11,
                     ),
                     Container(
-                      height: 37,
+                      height: 50,
                       width: 110,
-                      child: Center(
+                      decoration: BoxDecoration(
+                        color: AppColors.btnColor,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.btnBrown),
+                      ),
+                      child: const Center(
                         child: Text(
                           "M",
                           style: TextStyle(
@@ -200,19 +207,19 @@ class _DeatailItemState extends State<DeatailItem> {
                           ),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: AppColors.btnColor,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: AppColors.btnBrown),
-                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 11,
                     ),
                     Container(
-                      height: 37,
+                      height: 50,
                       width: 110,
-                      child: Center(
+                      decoration: BoxDecoration(
+                        color: AppColors.pureWhite,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.bodyTextGrey),
+                      ),
+                      child: const Center(
                         child: Text(
                           "L",
                           style: TextStyle(
@@ -221,13 +228,8 @@ class _DeatailItemState extends State<DeatailItem> {
                           ),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: AppColors.pureWhite,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: AppColors.bodyTextGrey),
-                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],
@@ -236,7 +238,7 @@ class _DeatailItemState extends State<DeatailItem> {
                 //prise
                 Row(
                   children: [
-                    Column(
+                    const Column(
                       children: [
                         Text(
                           "Prise",
@@ -259,10 +261,11 @@ class _DeatailItemState extends State<DeatailItem> {
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomBtn(
-                          btnText: "Buy NOw",
-                          widthFactor: 0.58,
+                          btnText: "Buy Now",
+                          widthFactor: 0.6,
                           onTap: () {},
                         ),
                       ],

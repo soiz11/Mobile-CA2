@@ -18,7 +18,7 @@ class _DeatailItemState extends State<DeatailItem> {
         backgroundColor: AppColors.pureWhite,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 35),
             child: Column(
               children: [
                 const Row(
@@ -43,8 +43,9 @@ class _DeatailItemState extends State<DeatailItem> {
                 ),
 
                 Container(
-                  padding: const EdgeInsets.all(8),
-                  height: 280,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
+                  height: 260,
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -86,6 +87,7 @@ class _DeatailItemState extends State<DeatailItem> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset("lib/assets/images/icon_a.png"),
+                        const SizedBox(width: 10),
                         Image.asset("lib/assets/images/bags.png"),
                       ],
                     ),
@@ -160,7 +162,7 @@ class _DeatailItemState extends State<DeatailItem> {
                           fontFamily: "regular"),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                   ],
                 ),
@@ -170,8 +172,8 @@ class _DeatailItemState extends State<DeatailItem> {
                 Row(
                   children: [
                     Container(
-                      height: 50,
-                      width: 110,
+                      height: 40,
+                      width: 100,
                       decoration: BoxDecoration(
                         color: AppColors.pureWhite,
                         borderRadius: BorderRadius.circular(10),
@@ -191,8 +193,8 @@ class _DeatailItemState extends State<DeatailItem> {
                       width: 11,
                     ),
                     Container(
-                      height: 50,
-                      width: 110,
+                      height: 40,
+                      width: 100,
                       decoration: BoxDecoration(
                         color: AppColors.btnColor,
                         borderRadius: BorderRadius.circular(10),
@@ -212,8 +214,8 @@ class _DeatailItemState extends State<DeatailItem> {
                       width: 11,
                     ),
                     Container(
-                      height: 50,
-                      width: 110,
+                      height: 40,
+                      width: 100,
                       decoration: BoxDecoration(
                         color: AppColors.pureWhite,
                         borderRadius: BorderRadius.circular(10),
@@ -229,26 +231,27 @@ class _DeatailItemState extends State<DeatailItem> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
                   ],
                 ),
 
+                const SizedBox(
+                  height: 15,
+                ),
                 //prise
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Column(
                       children: [
                         Text(
-                          "Prise",
+                          "Price",
                           style: TextStyle(
                               color: AppColors.bodyTextGrey,
                               fontSize: 18,
                               fontFamily: "regular"),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 4,
                         ),
                         Text(
                           '\$ 4.53',
@@ -260,15 +263,11 @@ class _DeatailItemState extends State<DeatailItem> {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomBtn(
-                          btnText: "Buy Now",
-                          widthFactor: 0.6,
-                          onTap: () {},
-                        ),
-                      ],
+                    CustomBtn(
+                      btnText: "Buy Now",
+                      widthFactor: 0.6,
+                      marginX: 0,
+                      onTap: () {},
                     ),
                   ],
                 ),

@@ -42,6 +42,7 @@ class _DeliveryState extends State<Delivery> {
                 ),
               ),
             ),
+            
             Positioned(
               top: 40.0,
               right: 10.0,
@@ -62,6 +63,7 @@ class _DeliveryState extends State<Delivery> {
                 ),
               ),
             ),
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -80,28 +82,32 @@ class _DeliveryState extends State<Delivery> {
                       height: 5,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: AppColors.bodyTextGrey.withOpacity(0.5),
+                        color: AppColors.bodyTextGrey.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                     ),
+
                     const SizedBox(height: 10.0),
+                    
                     Container(
                       child: const Text(
                         '10 minutes left',
                         style: TextStyle(
                           color: Colors.black,
                           fontFamily: 'bold',
-                          fontSize: 14,
+                          fontSize: 20,
                         ),
                       ),
                     ),
+
                     const SizedBox(height: 5.0),
+
                     Container(
                       child: RichText(
                         text: const TextSpan(
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 13,
                           ),
                           children: [
                             TextSpan(
@@ -121,7 +127,9 @@ class _DeliveryState extends State<Delivery> {
                         ),
                       ),
                     ),
+
                     const SizedBox(height: 10.0),
+
                     Container(
                       height: 5,
                       child: Row(
@@ -146,20 +154,22 @@ class _DeliveryState extends State<Delivery> {
                           ),
                           Expanded(
                             child: Container(
-                              color: AppColors.bodyTextGrey.withOpacity(0.5),
+                              color: AppColors.bodyTextGrey.withOpacity(0.25),
                             ),
                           ),
                         ],
                       ),
                     ),
+
                     const SizedBox(height: 10.0),
+
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       height: 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
                         border: Border.all(
-                          color: AppColors.bodyTextGrey.withOpacity(0.25),
+                          color: AppColors.bodyTextGrey.withOpacity(0.15),
                           width: 2.0,
                         ),
                       ),
@@ -169,13 +179,13 @@ class _DeliveryState extends State<Delivery> {
                           return Row(
                             children: [
                               Container(
-                                padding: const EdgeInsets.all(15),
+                                padding: const EdgeInsets.all(20),
                                 width: quarterWidth,
                                 height: quarterWidth,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15.0),
                                   border: Border.all(
-                                    color: AppColors.bodyTextGrey.withOpacity(0.35),
+                                    color: AppColors.bodyTextGrey.withOpacity(0.25),
                                     width: 2.0,
                                   ),
                                 ),
@@ -198,7 +208,7 @@ class _DeliveryState extends State<Delivery> {
                                       'Delivered your order',
                                       style: TextStyle(
                                         color: AppColors.textBlack,
-                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'bold',
                                       ),
                                     ),
                                     Text(
@@ -206,7 +216,7 @@ class _DeliveryState extends State<Delivery> {
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         color: AppColors.bodyTextGrey,
-                                        fontWeight: FontWeight.normal,
+                                        fontFamily: 'regular',
                                         fontSize: 12,
                                       ),
                                     ),
@@ -218,14 +228,12 @@ class _DeliveryState extends State<Delivery> {
                         },
                       ),
                     ),
+
                     const SizedBox(height: 10.0),
+
                     Container(
                       height: 75,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.bodyTextGrey.withOpacity(0.25),
-                          width: 2.0,
-                        ),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Row(
@@ -239,8 +247,9 @@ class _DeliveryState extends State<Delivery> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Container(
+ 
+                            Container(
+                              width: 150,
                               padding: const EdgeInsets.symmetric(horizontal: 0.5),
                               child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -252,32 +261,42 @@ class _DeliveryState extends State<Delivery> {
                                     style: TextStyle(
                                       color: AppColors.textBlack,
                                       fontFamily: 'bold',
-                                      fontSize: 13,
+                                      fontSize: 15,
                                     ),
                                   ),
-                                  SizedBox(height: 10.0),
+                                  SizedBox(height: 5.0),
                                   Text(
                                     'Personal Courier',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       color: AppColors.bodyTextGrey,
                                       fontFamily: 'regular',
-                                      fontSize: 9,
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ),
+
                           Expanded(
                             child: Container(),
                           ),
-                          const Expanded(
-                            child: Opacity(
-                              opacity: 0.7,
+                             Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                  border: Border.all(
+                                    color: AppColors.bodyTextGrey.withOpacity(0.25),
+                                    width: 2.0,
+                                  ),
+                                ),
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: const Opacity(
+                              opacity: 0.5,
                               child: Icon(Icons.wifi_calling_3),
                             ),
-                          ),
+                            ),
                         ],
                       ),
                     ),

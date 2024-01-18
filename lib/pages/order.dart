@@ -230,14 +230,12 @@ class _OrderState extends State<Order> {
                               SizedBox(
                                 width: mainLinespace,
                               ),
-                              SizedBox(
-                                width: subLinespace,
-                              ),
+                              
 
                               Container(
                                 // padding: EdgeInsets.all(2),
                                 padding: EdgeInsets.only(left: 6, bottom: 2, right: 2, top: 2),
-                                width: 90,
+                                width: 100,
                                 height: 25,
                                 decoration: BoxDecoration(
                                 color: const Color.fromARGB(0, 198, 124, 78),
@@ -251,6 +249,9 @@ class _OrderState extends State<Order> {
                                     Align(
                                       alignment: Alignment.center,
                                       child: Icon(Icons.note_add_outlined, color: AppColors.bodyTextGrey, size: 12, )),
+                                      const SizedBox(
+                                        width: 5,
+                                      ),
                                       Text('Add Note',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(

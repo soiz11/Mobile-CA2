@@ -85,8 +85,7 @@ class _DeliveryState extends State<Delivery> {
                         color: AppColors.bodyTextGrey.withOpacity(0.25),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                    ),
-
+                    ), 
                     const SizedBox(height: 10.0),
                     
                     Container(

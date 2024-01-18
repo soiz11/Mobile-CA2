@@ -8,6 +8,7 @@ class AppColors {
   static const Color bodyTextGrey = Color(0xFF9B9B9B);
   static const Color btnGrey = Color(0xFFF2F2F2);
   static const Color textBlack = Color(0xFF2F2D2C);
+  static const Color bargreen = Color(0xFF36c07E);
   static const Color searchBoxGrey = Color(0xFF313131);
   static const Color mainBodyBackground = Color(0xFFF9F9F9);
 

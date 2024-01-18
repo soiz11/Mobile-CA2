@@ -9,6 +9,8 @@ class CustomBtn extends StatelessWidget {
   final double widthFactor;
   final double heightAmount;
   final double fontSize;
+  final double marginX;
+  final double marginY;
 
   final Function()? onTap;
   IconData? icon;
@@ -22,6 +24,8 @@ class CustomBtn extends StatelessWidget {
     this.widthFactor = 1.0,
     this.heightAmount = 60,
     this.fontSize = 16,
+    this.marginX = 30,
+    this.marginY = 12,
     required this.onTap,
     this.icon,
     this.isIcon = false,
@@ -30,45 +34,49 @@ class CustomBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: heightAmount,
-          width: MediaQuery.of(context).size.width * widthFactor,
-          padding: const EdgeInsets.all(12),
-          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-          decoration: BoxDecoration(
-            color: btnColor,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Center(
-            child: Transform.translate(
-              offset: const Offset(0, 2),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    btnText,
-                    style: TextStyle(
-                      color: btnTextColor,
-                      fontFamily: "Bold",
-                      fontSize: fontSize,
-                    ),
+      onTap: onTap,
+      child: Container(
+        height: heightAmount,
+        width: MediaQuery.of(context).size.width * widthFactor,
+        padding: const EdgeInsets.all(10),
+        margin: EdgeInsets.symmetric(
+          vertical: marginY,
+          horizontal: marginX,
+        ),
+        decoration: BoxDecoration(
+          color: btnColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Center(
+          child: Transform.translate(
+            offset: const Offset(0, 2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  btnText,
+                  style: TextStyle(
+                    color: btnTextColor,
+                    fontFamily: "Bold",
+                    fontSize: fontSize,
                   ),
-                  isIcon == false
-                      ? const SizedBox.shrink()
-                      : Padding(
-                          padding: const EdgeInsets.only(
-                              left: 15.0), // Adjust the left margin as needed
-                          child: Icon(
-                            icon,
-                            color: Colors.white,
-                            size: 30,
-                          ),
+                ),
+                isIcon == false
+                    ? const SizedBox.shrink()
+                    : Padding(
+                        padding: const EdgeInsets.only(
+                            left: 15.0), // Adjust the left margin as needed
+                        child: Icon(
+                          icon,
+                          color: Colors.white,
+                          size: 30,
                         ),
-                ],
-              ),
+                      ),
+              ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

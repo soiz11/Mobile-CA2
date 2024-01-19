@@ -174,7 +174,7 @@ class _DeatailItemState extends State<DeatailItem> {
                 children: [
                   Container(
                     height: 40,
-                    width: 100,
+                    width: 95,
                     decoration: BoxDecoration(
                       color: AppColors.pureWhite,
                       borderRadius: BorderRadius.circular(10),
@@ -195,7 +195,7 @@ class _DeatailItemState extends State<DeatailItem> {
                   ),
                   Container(
                     height: 40,
-                    width: 100,
+                    width: 95,
                     decoration: BoxDecoration(
                       color: AppColors.btnColor,
                       borderRadius: BorderRadius.circular(10),
@@ -216,7 +216,7 @@ class _DeatailItemState extends State<DeatailItem> {
                   ),
                   Container(
                     height: 40,
-                    width: 100,
+                    width: 95,
                     decoration: BoxDecoration(
                       color: AppColors.pureWhite,
                       borderRadius: BorderRadius.circular(10),
@@ -268,6 +268,7 @@ class _DeatailItemState extends State<DeatailItem> {
                     btnText: "Buy Now",
                     widthFactor: 0.6,
                     marginX: 0,
+                    marginY: 5,
                     onTap: () {
                       Navigator.push(
                         context,

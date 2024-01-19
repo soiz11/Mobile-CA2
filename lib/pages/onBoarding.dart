@@ -16,7 +16,7 @@ class _OnBoardingState extends State<OnBoarding> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: AppColors.backgroundGradient,
+        backgroundColor: AppColors.backgroundBlack,
         body: Column(
           children: [
             Expanded(

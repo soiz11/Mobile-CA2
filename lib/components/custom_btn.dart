@@ -1,7 +1,6 @@
 import 'package:Mobile_CA_2/assets/colors/colors.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class CustomBtn extends StatelessWidget {
   final Color btnColor;
   final Color btnTextColor;
@@ -9,8 +8,10 @@ class CustomBtn extends StatelessWidget {
   final double widthFactor;
   final double heightAmount;
   final double fontSize;
+
   final double marginX;
   final double marginY;
+
 
   final Function()? onTap;
   IconData? icon;
@@ -29,6 +30,7 @@ class CustomBtn extends StatelessWidget {
     required this.onTap,
     this.icon,
     this.isIcon = false,
+    
   });
 
   @override

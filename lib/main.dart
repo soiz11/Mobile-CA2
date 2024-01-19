@@ -1,9 +1,5 @@
 import 'package:Mobile_CA_2/pages/home.dart';
-<<<<<<< Updated upstream
 import 'package:Mobile_CA_2/pages/testing.dart';
-=======
-import 'package:Mobile_CA_2/pages/onBoarding.dart';
->>>>>>> Stashed changes
 import 'package:flutter/material.dart';
 
 void main() {
